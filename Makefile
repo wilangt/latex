@@ -1,0 +1,2 @@
+init:
+	cp -rf root/* ../

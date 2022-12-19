@@ -1,0 +1,129 @@
+%
+% Parameters
+%
+
+\ifdefined\solution
+\else
+\def\solution{0}    % 0 = no solutions; 1 = solutions 
+\fi
+
+\ifdefined\source
+\else
+\def\source{0}    % 0 = limited sources; 1 = full sources 
+\fi
+
+\ifdefined\hidden
+\else
+\def\hidden{0}    % 0 = exercises are shown; 1 = exercises are shown
+\fi
+
+%
+% Document class 
+%
+
+\documentclass[a4paper, 11pt]{article}
+\pagenumbering{gobble}
+
+%
+% Title 
+%
+
+\title{Colles MP2I/MPI Lycée Champollion Grenoble} 
+\author{ \href{mailto:milan.gonzalez-thauvin@ens-lyon.fr}
+{Milan \textsc{Gonzalez-Thauvin}}, ENS de Lyon}
+\date{2022 - 2023}
+
+%
+% Custom macros 
+%
+
+\newcommand\barre{\noindent\paragraph{}\hrulefill}
+
+\newcommand{\includexo}[1]{
+	\def\temp{#1}\ifx\temp\empty
+  	
+	\else
+		\input{body/exos/#1}
+	\fi
+}
+
+\newcommand{\header}[1]{
+	\ifnum\hidden=0
+	\newpage
+	\section{#1}
+	\else
+	\fi
+}
+
+\newcommand{\eleve}[4]{
+	\ifnum\hidden=0
+	
+	\begin{minipage}{\textwidth}
+	\barre
+	
+	\begin{center}\subsection*{Colle d'informatique - #1}\end{center}
+	\setcounter{exercice}{0}
+	\includexo{#2}
+	\includexo{#3}
+	\includexo{#4}
+	\paragraph{} Note :
+	\end{minipage}
+
+	\else
+	\fi
+}
+
+\newcommand{\bonus}[4]{
+	\ifnum\hidden=0
+		
+	\barre
+
+	\begin{center}\subsection*{Exercice Bonus - #1}\end{center}
+	\setcounter{exercice}{-1}
+	\includexo{#2}
+	\setcounter{exercice}{-1}
+	\includexo{#3}
+	\setcounter{exercice}{-1}
+	\includexo{#4}
+
+	\else
+	\fi
+}
+
+\newcommand{\colle}[9]{
+	\ifnum\hidden=0
+	
+	\header{#1}
+
+	\eleve{#1}{#2}{#3}{}
+
+	\eleve{#1}{#4}{#5}{}
+
+	\eleve{#1}{#6}{#7}{#8}
+	
+	\def\temp{#9}\ifx\temp\empty
+  	
+	\else
+		\bonus{#1}{#9}{}{}
+	\fi
+
+	\else
+	\fi
+}
+
+\newcounter{exercice}[subsection]
+\newenvironment{exercice}[3]
+{
+	\refstepcounter{exercice}\par\medskip\noindent 
+	\textbf{Exercice~\theexercice. #1}
+	\hfill
+	\ifnum\source=1
+	\emph{#2}
+	\fi
+	\emph{#3}
+	\\
+}
+{
+	\medskip
+}
+	
