@@ -1,0 +1,60 @@
+%%%%%%%%%% Document class %%%%%%%%%%
+
+\input{latex/document/paper}
+\def\fullversion{1}    		% 0 = conference version; 1 = full version
+\def\cameraversion{0}    	% 0 = long version; 1 = proceedings version
+\def\showoverflow{1}   		% 1 = show overflows
+\def\allow{0}      				% 0 = remove todo command
+\def\anonymous{0}      		% 1 = anonymous
+
+%%%%%%%%%% Custom packages and shortcuts %%%%%%%%%%%
+
+\input{latex/addons/base}
+\input{latex/addons/computer_science}
+\input{latex/addons/crypto}
+\input{latex/addons/math}
+\input{latex/addons/tikz}
+%\input{latex/addons/french}
+
+%%%%%%%%%% Front page %%%%%%%%%%
+
+\title{TODO}
+\titlerunning{TODO}
+\date{\today} % TODO
+
+\ifnum\anonymous=0
+\author{
+	Milan \textsc{Gonzalez-Thauvin} 
+	%\inst{1} \and TODO \textsc{TODO}\inst{2}
+}% Add author name here
+
+\institute{ENS de Lyon\\
+  \href{mailto:milan.gonzalez-thauvin@ens-lyon.fr}{milan.gonzalez-thauvin@ens-lyon.fr} 
+	%\and CWI Amsterdam\\
+  %\href{mailto:TODO@cwi.nl}{TODO@cwi.nl}
+}  % Add institute here
+
+\else
+\author{} 
+\institute{}
+\fi
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%% Document %%%%%%%%%%
+
+\section[Introduction]{Introduction} \label{sec:introduction}
+\input{body/1introduction}
+
+
+%%%%%%%%%% Bibtex %%%%%%%%%%
+
+\ifnum\fullversion=0
+  \bibliographystyle{bib/splncs03}
+ \else
+   \bibliographystyle{bib/alpha-short}
+ \fi
+\bibliography{bib/cryptobib/abbrev3,bib/cryptobib/crypto,bib/add}
+
+\end{document} 

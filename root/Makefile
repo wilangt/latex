@@ -1,4 +1,5 @@
-TEX = latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -file-line-error" -use-make
+FLAGS = -halt-on-error -file-line-error
+TEX = latexmk -pdf -pdflatex="pdflatex $(FLAGS)" -use-make
 DOC = main
 
 .PHONY: all $(DOC) 
@@ -10,14 +11,18 @@ $(DOC): $(DOC).pdf  # cryptobib
 %.pdf: %.tex *.tex */*.tex */*/*.tex */*/*/*.tex 
 	$(TEX) $<
 
-pdflatex: # if latexmk doesn't work
-	pdflatex $(DOC).tex
-	bibtex $(DOC) 
-	pdflatex $(DOC).tex
-	pdflatex $(DOC).tex
+pdflatex:  # if latexmk doesn't work
+	pdflatex $(FLAGS) $(DOC).tex
+	pdflatex $(FLAGS) $(DOC).tex
 
-cryptobib: latex/bib/cryptobib/crypto.bib  # to download cryptobib
-	( cd latex/bib/cryptobib && git pull origin master )
+bibtex:  # same with bibtex 
+	pdflatex $(FLAGS) $(DOC).tex
+	bibtex $(DOC) 
+	pdflatex $(FLAGS) $(DOC).tex
+	pdflatex $(FLAGS) $(DOC).tex
+
+cryptobib:  # to download cryptobib
+	( cd latex/bib/cryptobib && git submodule init && git submodule update )
 
 clean:
 	latexmk -c -bibtex
