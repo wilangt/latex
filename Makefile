@@ -1,8 +1,8 @@
 all: paper
 
-root:
+base:
 	cp -rn root/* ../
 	cp -n root/.gitignore ../
 
-paper: root
+paper: base 
 	cp -n examples/main/paper.tex ../main.tex
