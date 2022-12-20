@@ -1,2 +1,4 @@
 init:
-	cp -rf root/* ../
+	cp -r root/* ../
+	cp root/.gitignore ../
+
