@@ -1,0 +1,33 @@
+%%%%%%%%%% Document class %%%%%%%%%%
+
+\input{latex/document/beamer}
+
+%%%%%%%%%% Custom packages and shortcuts %%%%%%%%%%%
+
+\input{latex/addons/base}
+\input{latex/addons/computer_science}
+\input{latex/addons/crypto}
+\input{latex/addons/math}
+\input{latex/addons/tikz}
+%\input{latex/addons/french}
+
+%%%%% Front page %%%%% 
+
+\title[TODO]{TODO}
+\author{Milan \textsc{Gonzalez-Thauvin}}
+\institute{ENS de Lyon}
+\date{\today} %TODO
+
+\begin{document}
+
+% Rien d'autre à faire qu'afficher le titre
+\begin{frame}
+	\titlepage{}
+\end{frame}
+
+%%%%% Document %%%%% 
+
+% Introduction
+\input{slides/1introduction.tex}
+
+\end{document}
