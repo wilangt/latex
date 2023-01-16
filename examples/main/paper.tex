@@ -42,6 +42,10 @@
 \begin{document}
 \maketitle
 
+%\begin{abstract}
+	% \input{body/0abstract}
+%\end{abstract}
+
 %%%%%%%%%% Document %%%%%%%%%%
 
 \input{body/1introduction}
@@ -50,10 +54,11 @@
 %%%%%%%%%% Bibtex %%%%%%%%%%
 
 \ifnum\fullversion=0
-  \bibliographystyle{bib/splncs03}
+  \bibliographystyle{latex/bib/splncs03}
  \else
-   \bibliographystyle{bib/alpha-short}
+   \bibliographystyle{latex/bib/alpha-short}
  \fi
-\bibliography{bib/cryptobib/abbrev3,bib/cryptobib/crypto,bib/add}
+\bibliography{latex/bib/cryptobib/abbrev3,latex/bib/cryptobib/crypto,
+latex/bib/add}
 
 \end{document} 
