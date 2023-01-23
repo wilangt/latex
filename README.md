@@ -32,3 +32,7 @@ Then copy what's inside the `root` directory in the parent directory (caution,
 there is a `.gitignore` file).
 One can also run `make init`.
 Everything is setup.
+
+## Warning
+Caution with `git-submodule` especially when updating it (not really necessary
+by the way), it might erase your current modifications
