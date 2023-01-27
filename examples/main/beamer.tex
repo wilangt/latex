@@ -1,5 +1,6 @@
 %%%%%%%%%% Document class %%%%%%%%%%
 
+\def\tocsection{1}    		% 0 = No ToC at beginning of section ; 1 = Yes 
 \input{latex/document/beamer}
 
 %%%%%%%%%% Custom packages and shortcuts %%%%%%%%%%%
@@ -20,10 +21,15 @@
 
 \begin{document}
 
-% Rien d'autre à faire qu'afficher le titre
+% Rien d'autre à faire qu'afficher le titre et éventuellement ToC
 \begin{frame}
 	\titlepage{}
 \end{frame}
+
+%\begin{frame}
+%	\frametitle{Summary}
+%	\tableofcontents
+%\end{frame}
 
 %%%%% Document %%%%% 
 

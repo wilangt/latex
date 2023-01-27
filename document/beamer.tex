@@ -8,6 +8,7 @@
 \setbeamerfont{subsection number projected}{family=\rmfamily,series=\bfseries,size=\normalsize}
 \setbeamercolor{subsection number projected}{bg=rougeb,fg=white}
 
+\ifnum\tocsection=1
 \AtBeginSection[]
 {
     \begin{frame}
@@ -15,6 +16,7 @@
         \tableofcontents[currentsection]
     \end{frame}
 }
+\fi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
