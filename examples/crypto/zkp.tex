@@ -1,0 +1,22 @@
+\begin{figure}[h]
+
+	\begin{center}
+		\fbox{%
+			\pseudocode{%
+				\prover_x \< \< \verifier(x) \\
+				\< \< r \getsr \bit^* \\
+				\< \sendmessageleft*{r} \< \\
+				r' \getsr \bit^* \\
+				m \gets M_x(r) \< \< \\
+				c \gets \Commit(m;r') \< \< \\
+				\< \sendmessageright*{c} \< \\
+				\< \text{Engage a \ZKP to prove} \< \\
+				\< \text{that $(x, r, c) \in \Lang'$} \< \\
+				\text{Run }\prover'  \< \< \text{Run }\verifier' \\
+				\< \< \text{Accept iff }\verifier'\text{ does}
+			}
+		}
+	\end{center}
+    \caption{Computational \ZKP for $\Lang$}
+    \label{fig:zkp}
+\end{figure}
