@@ -33,8 +33,11 @@
 \newcommand{\myGame}{\ensuremath{\mathsf{Game}}\xspace}
 \newcommand{\Event}{\ensuremath{\mathsf{E}}\xspace}
 \newcommand{\Span}{\ensuremath{\mathsf{Span}}}
-\newcommand{\prob}[1]{{\Pr}\left[\,{#1}\,\right]}
-\newcommand{\probb}[2]{{\Pr}_{#1}\left[\,{#2}\,\right]}
+\newcommand{\proba}[3]{
+	{\Pr}_{#3}\left[\,{#1 \ifthenelse{\equal{#2}{}}{}{\: | \: #2}}\,\right]
+}
+\newcommand{\prob}[1]{\proba{#1}{}{}} % TO DELETE
+\newcommand{\probb}[2]{\proba{#2}{#1}{}} % TO DELETE
 \newcommand{\Dx}{\mathcal{D}}
 \newcommand{\Hx}{\mathcal{H}}
 \newcommand{\Sx}{\mathcal{S}}
