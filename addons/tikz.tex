@@ -1,4 +1,10 @@
+% To rename illustration ?
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
 \usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
 %\usetikzlibrary{positioning,calc}
 %\usepackage[demo]{tikzpeople} % For people
 
@@ -9,3 +15,12 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{crypto.symbols}
 \tikzset{shadows=no}        % Option: add shadows to XOR, ADD, etc.
+
+\tikzset{shape dot/.style= {shape = circle, scale = .6, fill = black}}
+\tikzset{shape circle/.style= {shape = circle, scale = .6, draw}}
+\tikzset{shape square/.style= {shape = rectangle, scale = .8, fill = black}}
+\tikzset{shape star/.style= {shape = star, scale = .5, fill = black, star point
+height = .2cm}}
+\tikzset{shape reddot/.style= {shape = circle, scale = .5, fill = red}}
+\tikzset{shape bluedot/.style= {shape = circle, scale = .5, fill = blue}}
+\tikzset{shape vertex/.style= {shape = circle,scale=.7, draw}}
