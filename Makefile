@@ -6,12 +6,12 @@ base:
 
 paper: base 
 	cp -rn root/body ../
-	cp -n examples/main/paper.tex ../main.tex
+	cp -n main-files/paper.tex ../main.tex
 
 document: base 
 	cp -rn root/body ../
-	cp -n examples/main/document.tex ../main.tex
+	cp -n main-files/document.tex ../main.tex
 
 beamer: base 
 	cp -rn root/slides ../
-	cp -n examples/main/beamer.tex ../main.tex
+	cp -n main-files/beamer.tex ../main.tex
