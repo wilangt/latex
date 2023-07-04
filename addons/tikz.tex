@@ -5,8 +5,8 @@
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric}
-%\usetikzlibrary{positioning,calc}
-%\usepackage[demo]{tikzpeople} % For people
+\usetikzlibrary{positioning,calc, arrows.meta, bending}
+\usepackage[demo]{tikzpeople} % For people
 
 %% from TikZ for cryptographers
 %% Download and place in your texmf folder the files 
@@ -24,3 +24,12 @@ height = .2cm}}
 \tikzset{shape reddot/.style= {shape = circle, scale = .5, fill = red}}
 \tikzset{shape bluedot/.style= {shape = circle, scale = .5, fill = blue}}
 \tikzset{shape vertex/.style= {shape = circle,scale=.7, draw}}
+
+% pause for tikz (from https://tex.stackexchange.com/questions/55806/mindmap-tikzpicture-in-beamer-reveal-step-by-step)
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
