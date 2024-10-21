@@ -2,7 +2,7 @@ all: paper
 
 base:
 	cp -n root/Makefile ../
-	cp -n root/.gitignore ../
+	cp -i root/.gitignore ../
 	cp -n root/headers.tex ../
 
 paper: base 
