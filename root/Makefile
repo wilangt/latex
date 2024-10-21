@@ -21,7 +21,7 @@ bibtex:  # same with bibtex
 	pdflatex -jobname=$(JOB) $(FLAGS) $(DOC).tex
 	pdflatex -jobname=$(JOB) $(FLAGS) $(DOC).tex
 
-cryptobib:  # to download cryptobib
+cryptobib: submodule_latex # to download cryptobib
 	( cd latex/bib/cryptobib && git submodule init && git submodule update )
 
 submodule_latex:  # Check if latex directory is empty
