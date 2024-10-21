@@ -8,7 +8,7 @@ DOC=main
 
 all: $(JOB).pdf
 
-$(JOB).pdf: $(DOC).tex  **/*.tex $(CRYPTOBIB)
+$(JOB).pdf: $(DOC).tex  **/*.tex submodule_latex $(CRYPTOBIB)
 	$(TEX) $<
 
 pdflatex:  # if latexmk doesn't work
@@ -25,9 +25,7 @@ cryptobib:  # to download cryptobib
 	( cd latex/bib/cryptobib && git submodule init && git submodule update )
 
 submodule_latex:  # Check if latex directory is empty
-	@if [ -z "$$(ls -A latex)" ]; \
-		then (echo "Downloading cryptobib" && git submodule init && git submodule update); \
-		else echo "WARNING THIS MIGHT DELETE UNCOMMITED CHANGES IN SUBMODULE"; fi
+	@if [ -z "$$(ls -A latex)" ]; then (echo "Downloading latex submodule" && git submodule init && git submodule update); fi
 
 clean:
 	latexmk -c -bibtex -jobname=$(JOB)
