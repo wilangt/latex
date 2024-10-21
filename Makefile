@@ -12,6 +12,7 @@ paper: base
 document: base 
 	cp -rn root/body ../
 	cp -n main-files/document.tex ../main.tex
+	tail -n +2 ../Makefile > ../Makefile.tmp && mv ../Makefile.tmp ../Makefile # To remove cryptobib dependency
 
 beamer: base 
 	cp -rn root/slides ../

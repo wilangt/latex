@@ -1,3 +1,4 @@
+CRYPTOBIB=cryptobib
 JOB=document
 FLAGS = -halt-on-error -file-line-error
 TEX = latexmk -pdf -jobname=$(JOB) -pdflatex="pdflatex $(FLAGS)" -use-make
@@ -7,7 +8,7 @@ DOC=main
 
 all: $(JOB).pdf
 
-$(JOB).pdf: $(DOC).tex  **/*.tex # cryptobib
+$(JOB).pdf: $(DOC).tex  **/*.tex $(CRYPTOBIB)
 	$(TEX) $<
 
 pdflatex:  # if latexmk doesn't work
