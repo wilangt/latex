@@ -1,7 +1,11 @@
-\usepackage{algorithm} % write algorithms and pseudocode 
-\usepackage{algpseudocode} % same 
+\usepackage{algpseudocode} % write algorithms and pseudocode 
+\usepackage{algorithm} % label and cross ref for algorithms
 \usepackage{listings} % write (understandable) code
 \usepackage{xcolor} % setup colors for listings
+
+% Change command names
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
 
 % Source : Overleaf
 \definecolor{codegreen}{rgb}{0,0.6,0}
