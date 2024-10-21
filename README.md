@@ -30,7 +30,7 @@ categories:
 To start a new LaTex document with this repository, clone it in an empty folder.
 Then copy what's inside the `root` directory in the parent directory (caution,
 there is a `.gitignore` file).
-One can also run `make init`.
+One can also run `make paper`, `make document` or `make beamer`.
 Everything is setup.
 
 ## Warning
