@@ -1,0 +1,60 @@
+%!TEX root=../../main.tex
+
+%-------------------------------------------------------------------------------
+% Dependency
+% - math.tex
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Packages
+%-------------------------------------------------------------------------------
+
+\usepackage[lambda,n,operators]{cryptocode}
+
+
+%-------------------------------------------------------------------------------
+% Form and style
+% \renewcommand at the beginning to change style for whole document
+% (the space at the begining of the lines is on purpose)
+%-------------------------------------------------------------------------------
+
+ \newcommand{\styleDistrib}[1]{\ensuremath{\mathcal{#1}}\xspace}
+ \newcommand{\styleSampleFrom}[1]{\ensuremath{\xleftarrow{\$} #1}\xspace}
+ \newcommand{\styleSampleUnif}[1]{\styleSampleFrom{\mathcal{U}\parentheses{#1}}}
+ \newcommand{\styleGetFromPTM}[1]{\ensuremath{\xleftarrow{\$} #1}\xspace}
+ \newcommand{\styleAdv}[1]{\ensuremath{\mathcal{#1}}\xspace}
+ \newcommand{\styleOracle}[1]{\ensuremath{\mathcal{#1}}\xspace}
+ \newcommand{\styleAlgo}[1]{\ensuremath{\mathsf{#1}}\xspace}
+
+%-------------------------------------------------------------------------------
+% Macro (TODO)
+%-------------------------------------------------------------------------------
+
+ % Algorithms
+\newcommand{\Algo}[1]{\styleAlgo{#1}}
+
+% Adversaries
+\newcommand{\AdvA}{\ensuremath{\styleAdv{A}}\xspace}
+% \newcommand\Adv\AdvA
+\newcommand{\AdvB}{\ensuremath{\styleAdv{B}}\xspace}
+\newcommand{\AdvC}{\ensuremath{\styleAdv{C}}\xspace}
+\newcommand{\AdvD}{\ensuremath{\styleAdv{D}}\xspace}
+\newcommand{\AdvX}[1]{\ensuremath{\styleAdv{#1}}\xspace}
+
+% Oracles
+\newcommand{\OracleO}{\ensuremath{\styleOracle{O}}\xspace}
+% \newcommand\Oracle\OracleO
+\newcommand{\OracleX}[1]{\ensuremath{\styleOracle{#1}\xspace}}
+\newcommand{\OracleAccess}[2]{#1^#2}
+
+% Distributions and sample
+\newcommand{\DistD}{\ensuremath{\styleDistrib{D}}\xspace}
+% \newcommand\Dist\DistD
+\newcommand{\DistH}{\ensuremath{\styleDistrib{H}}\xspace}
+\newcommand{\DistS}{\ensuremath{\styleDistrib{S}}\xspace}
+\newcommand{\DistL}{\ensuremath{\styleDistrib{L}}\xspace}
+\newcommand{\DistX}[1]{\ensuremath{\styleDistrib{#1}}\xspace}
+
+\newcommand{\sampleFrom}[1]{\styleSampleFrom{#1}}
+\newcommand{\getsr}[1]{\styleGetFromPTM{#1}}
+\newcommand{\Unif}[1]{\styleSampleUnif{#1}}
