@@ -20,8 +20,12 @@
 
  \newcommand{\styleVec}[1]{\ensuremath{\overrightarrow{#1}}\xspace}
  \newcommand{\styleBBSet}[1]{\ensuremath{\mathbb{#1}}\xspace}
+ \newcommand{\styleGroup}[1]{\ensuremath{\mathbb{#1}}\xspace}
  \newcommand{\styleRing}[1]{\ensuremath{\mathcal{#1}}\xspace}
  \newcommand{\styleRelation}[1]{\ensuremath{\mathcal{#1}}\xspace}
+ \newcommand{\styleEquation}[1]{\ensuremath{\mathcal{#1}}\xspace}
+ \newcommand{\styleProba}[3]{
+	{\Pr}_{#3}\ifthenelse{\equal{#2}{}}{\brackets{#1}}{\bracketsSuchThat{#1}{#2}}}
 
 %-------------------------------------------------------------------------------
 % Macros
@@ -39,29 +43,40 @@
 \newcommand{\C}{\styleBBSet{C}}
 \newcommand{\F}{\styleBBSet{F}}
 
+% Groups
+\newcommand{\GroupG}{\styleGroup{G}}
+\newcommand{\Group}[1]{\styleGroup{#1}}
+
 % Rings
 \newcommand{\RingR}{\styleRing{R}}
-\newcommand\Ring\RingR
-\newcommand{\RingX}[1]{\styleRing{#1}}
+\newcommand{\Ring}[1]{\styleRing{#1}}
 
 % Relations
 \newcommand{\RelR}{\styleRelation{R}}
-\newcommand\Rel\RelR
-\newcommand{\RelX}[1]{\styleRelation{#1}}
+\newcommand{\Rel}[1]{\styleRelation{#1}}
+
+% Equations
+\newcommand{\EquationE}{\styleEquation{E}}
+\newcommand{\EqE}{\EquationE}
+\newcommand{\Equation}[1]{\styleEquation{#1}}
 
 % Parentheses, brackets, etc
 \newcommand{\parentheses}[1]{\left( #1 \right)}
 \newcommand{\set}[1]{\left\{ #1 \right\}}
 \newcommand{\integerSet}[1]{\llbracket #1 \rrbracket}
-\newcommand{\setSuchThat}[2]{\set{#1 \middle| #2}}
+\newcommand{\setSuchThat}[2]{\set{#1 \; \middle| \; #2}}
 \newcommand{\brackets}[1]{\left[ #1 \right]}
-\newcommand{\bracketsSuchThat}[2]{\brackets{#1 | #2}}
+\newcommand{\bracketsSuchThat}[2]{\brackets{\: #1 \; \middle| \; #2 \:}}
 \newcommand{\scal}[2]{\left< #1, #2 \right> }
 
-% Probabilities TODO
+% Probabilities
+\newcommand{\Proba}[1]{\styleProba{#1}{}{}}
+\newcommand{\ProbaCond}[2]{\styleProba{#1}{#2}{}}
+\newcommand{\ProbaRand}[2]{\styleProba{#1}{}{#2}}
+\newcommand{\ProbaCondRand}[3]{\styleProba{#1}{#2}{#3}}
 
-% Asymptotic TODO marche pas
-\newcommand{\bigO}[1]{\mathcal{O} \left( #1 \right)}
+% Asymptotic
+\newcommand{\bigO}[1]{\mathcal{O} \parentheses{#1}}
 \newcommand{\smallO}[1]{o\parentheses{#1}}
 \newcommand{\bigOmega}[1]{\Omega\parentheses{#1}}
 \newcommand{\smallOmega}[1]{\omega\parentheses{#1}}
