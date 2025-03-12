@@ -21,8 +21,8 @@ bibtex:  # same with bibtex
 	pdflatex -jobname=$(JOB) $(FLAGS) $(DOC).tex
 	pdflatex -jobname=$(JOB) $(FLAGS) $(DOC).tex
 
-cryptobib: submodule_latex # to download cryptobib
-	( cd latex/bib/cryptobib && git submodule init && git submodule update )
+cryptobib: # submodule_latex # to download cryptobib (dependency useless now)
+	( ls cryptobib || echo "Downloading cryptobib" && git submodule add "https://github.com/cryptobib/export" cryptobib )
 
 submodule_latex:  # Check if latex directory is empty
 	@if [ -z "$$(ls -A latex)" ]; then (echo "Downloading latex submodule" && git submodule init && git submodule update); fi
