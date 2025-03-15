@@ -21,7 +21,7 @@
  \newcommand{\styleDistrib}[1]{\ensuremath{\mathcal{#1}}\xspace}
  \newcommand{\styleSampleFrom}[1]{\ensuremath{\xleftarrow{\$} #1}\xspace}
  \newcommand{\styleSampleUnif}[1]{\styleSampleFrom{\mathcal{U}\parentheses{#1}}}
- \newcommand{\styleGetFromPTM}{\ensuremath{\xleftarrow{\$}}\xspace}
+ \newcommand{\styleGetFromPPT}{\ensuremath{\xleftarrow{\$}}\xspace}
  \newcommand{\styleAdv}[1]{\ensuremath{\mathcal{#1}}\xspace}
  \newcommand{\styleOracle}[1]{\ensuremath{\mathcal{#1}}\xspace}
  \newcommand{\styleEvent}[1]{\ensuremath{\mathsf{#1}}\xspace}
@@ -61,7 +61,7 @@
 % Oracles
 \newcommand{\OracleO}{\styleOracle{O}}
 \newcommand{\Oracle}[1]{\styleOracle{#1}}
-\newcommand{\OracleAccess}[2]{#1^#2}
+\newcommand{\OracleAccess}[2]{#1^{#2}}
 
 % Distributions
 \newcommand{\DistD}{\styleDistrib{D}}
@@ -72,7 +72,7 @@
 
 % Samples
 \newcommand{\sampleFrom}[1]{\styleSampleFrom{#1}}
-\newcommand{\getsr}[1]{\styleGetFromPTM{#1}}
+\newcommand{\getsr}[1]{\styleGetFromPPT{#1}}
 \newcommand{\Unif}[1]{\styleSampleUnif{#1}}
 
 % Events, Games, View (cf math.tex)
@@ -86,8 +86,8 @@
 \newcommand{\equivComp}{\ensuremath{\overset{\mathsf{comp}}{\equiv}}\xspace}
 \newcommand{\View}{\ensuremath{\textsc{View}}\xspace}
 
-\renewcommand{\Game}{\styleGame{G}}
-\newcommand{\Gamei}[1]{\ensuremath{\Game_{#1}}\xspace}
+\newcommand{\CryptoGame}{\styleGame{G}}
+\newcommand{\Gamei}[1]{\ensuremath{\CryptoGame_{#1}}\xspace}
 
 % Class of problems
 \newcommand{\BPP}{\styleClassProblem{BPP}}
@@ -135,9 +135,6 @@
 \newcommand{\Sign}{\styleCryptAlgo{Sign}}
 \newcommand{\Verify}{\styleCryptAlgo{Verify}}
 \newcommand{\Trapdoor}{\styleCryptAlgo{Trapdoor}}
-
-\newcommand{\OT}{\styleCryptAlgo{OT}}
-\newcommand{\OTs}{\styleCryptAlgo{OTs}}
 
 \newcommand{\Eval}{\styleCryptAlgo{Eval}}
 \newcommand{\PRG}{\styleCryptAlgo{PRG}}
