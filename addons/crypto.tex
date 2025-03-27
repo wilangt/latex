@@ -16,6 +16,8 @@
 \newcommand{\getsr}{\xleftarrow{\$}}
 \newcommand{\unif}[1]{\leftarrow \mathcal{U} \left( #1 \right)}
 \newcommand{\poly}{\ensuremath{\mathsf{poly}}\xspace}
+\newcommand{\negl}{\ensuremath{\mathsf{negl}}\xspace}
+\newcommand{\ppt}{\ensuremath{\mathsf{ppt}}\xspace}
 
 %--------------------------------------------------------
 % Standard proba, games, proofs, sampling, distributions
@@ -71,10 +73,11 @@
 \newcommand{\AM}{\ensuremath{\mathsf{AM}}\xspace}
 \newcommand{\CZK}{\ensuremath{\mathsf{CZK}}\xspace}
 
-\newcommand{\Lang}{\ensuremath{\mathscr{L}}}
+\newcommand{\Lang}{\ensuremath{\mathcal{L}}}
 \newcommand{\Lpar}{\ensuremath{\Lang_{\param}}\xspace}
 \newcommand{\setX}{\mathcal{X}}
 \newcommand{\setY}{\mathcal{Y}}
+\newcommand{\setW}{\mathcal{W}}
 \newcommand{\keyspace}{\mathcal{K}}
 
 
@@ -88,14 +91,14 @@
 \newcommand{\verifier}{\ensuremath{\mathsf{V}}\xspace}
 \newcommand{\sender}{\ensuremath{\mathsf{S}}\xspace}
 \newcommand{\receiver}{\ensuremath{\mathsf{R}}\xspace}
-\newcommand{\ZK}{\textsf{ZK}\xspace}
-\newcommand{\zk}{\textsf{zk}\xspace}
+\newcommand{\ZK}{\mathsf{ZK}\xspace}
+\newcommand{\zk}{\mathsf{zk}\xspace}
 \newcommand{\zkp}{zero-knowledge proof\xspace}
 \newcommand{\zkps}{zero-knowledge proofs\xspace}
-\newcommand{\ZKP}{\textsf{ZKP}\xspace}
-\newcommand{\ZKPoK}{\textsf{ZKPoK}\xspace}
-\newcommand{\WI}{\textsf{WI}\xspace}
-\newcommand{\HVZK}{\textsf{HVZK}\xspace}
+\newcommand{\ZKP}{\mathsf{ZKP}\xspace}
+\newcommand{\ZKPoK}{\mathsf{ZKPoK}\xspace}
+\newcommand{\WI}{\mathsf{WI}\xspace}
+\newcommand{\HVZK}{\mathsf{HVZK}\xspace}
 \newcommand{\NIZK}{\hardprobfont{NIZK}\xspace}
 \newcommand{\NIZKs}{\hardprobfont{NIZKs}\xspace}
 \newcommand{\NIWI}{\hardprobfont{NIWI}\xspace}
@@ -107,21 +110,27 @@
 \newcommand{\PRG}{\ensuremath{\mathsf{PRG}}\xspace}
 \newcommand{\Hash}{\ensuremath{\mathsf{H}}\xspace}
 \newcommand{\Setup}{\ensuremath{\mathsf{Setup}}\xspace}
-\newcommand{\GroupGen}{\textsf{BilinearGen}\xspace}
-\newcommand{\DDHGen}{\textsf{DHGen}\xspace}
-\newcommand{\PGen}{\textsf{PGen}\xspace}
+\newcommand{\GroupGen}{\mathsf{BilinearGen}\xspace}
+\newcommand{\DDHGen}{\mathsf{DHGen}\xspace}
+\newcommand{\PGen}{\mathsf{PGen}\xspace}
+\newcommand{\PKE}{\ensuremath{\mathsf{PKE}}\xspace}
 \newcommand{\KeyGen}{\ensuremath{\mathsf{KeyGen}}\xspace}
 \newcommand{\Enc}{\ensuremath{\mathsf{Enc}}\xspace}
 \newcommand{\Dec}{\ensuremath{\mathsf{Dec}}\xspace}
 \newcommand{\INDCCA}{\ensuremath{\mathsf{IND\text{-}CCA}}\xspace}
 \newcommand{\INDCPA}{\ensuremath{\mathsf{IND\text{-}CPA}}\xspace}
+\newcommand{\Unf}{\ensuremath{\mathsf{Unf}}\xspace}
+\newcommand{\Anon}{\ensuremath{\mathsf{Anon}}\xspace}
 \newcommand{\Rand}{\ensuremath{\mathsf{Rand}}\xspace}
 \newcommand{\com}{\ensuremath{\mathsf{com}}\xspace}
 \newcommand{\Commit}{\ensuremath{\mathsf{Commit}}\xspace}
 \newcommand{\Prove}{\ensuremath{\mathsf{Prove}}\xspace}
 \newcommand{\prove}{\ensuremath{\mathsf{prove}}\xspace}
+\newcommand{\RS}{\ensuremath{\mathsf{RS}}\xspace}
+\newcommand{\SIG}{\ensuremath{\mathsf{SIG}}\xspace}
 \newcommand{\Sign}{\ensuremath{\mathsf{Sign}}\xspace}
 \newcommand{\Verify}{\ensuremath{\mathsf{Verify}}\xspace}
+\newcommand{\Corrupt}{\ensuremath{\mathsf{Corrupt}}\xspace}
 \newcommand{\Answer}{\ensuremath{\mathsf{Answer}}\xspace}
 \newcommand{\Open}{\ensuremath{\mathsf{Open}}\xspace}
 \newcommand{\myproof}{\ensuremath{\vec{\pi}}\xspace}
@@ -143,8 +152,12 @@
 
 \newcommand{\pk}{\ensuremath{\mathsf{pk}}\xspace}
 \newcommand{\sk}{\ensuremath{\mathsf{sk}}\xspace}
+\newcommand{\ct}{\ensuremath{\mathsf{ct}}\xspace}
 \newcommand{\ek}{\ensuremath{\mathsf{ek}}\xspace}
+\newcommand{\dk}{\ensuremath{\mathsf{dk}}\xspace}
 \newcommand{\vk}{\ensuremath{\mathsf{vk}}\xspace}
+\newcommand{\rvk}{\ensuremath{\mathsf{rvk}}\xspace}
+\newcommand{\rsk}{\ensuremath{\mathsf{rsk}}\xspace}
 \newcommand{\pvk}{\ensuremath{\mathsf{pvk}}\xspace}
 \newcommand{\PVK}{\ensuremath{\mathsf{PVK}}\xspace}
 \newcommand{\hk}{\ensuremath{\mathsf{hk}}\xspace}
@@ -153,12 +166,19 @@
 \newcommand{\param}{\ensuremath{{\mathsf{par}}}\xspace}
 \newcommand{\trap}{\ensuremath{\mathcal{T}}\xspace}
 \newcommand{\eps}{\varepsilon}
+\newcommand{\msg}{\ensuremath{\mathsf{m}}\xspace}
+\newcommand{\sig}{\ensuremath{\mathsf{sig}}\xspace}
+\newcommand{\ring}{\ensuremath{\mathsf{R}}\xspace}
+
+\newcommand{\statement}{\ensuremath{\mathsf{x}}\xspace}
+\newcommand{\witness}{\ensuremath{\mathsf{w}}\xspace}
+
 
 %--------------------------------------------------------
 % Hard problems
 %--------------------------------------------------------
 
-\newcommand{\hardprobfont}[1]{\texorpdfstring{\ensuremath{\textsf{#1}}}{#1}}
+\newcommand{\hardprobfont}[1]{\texorpdfstring{\ensuremath{\mathsf{#1}}}{#1}}
 \newcommand{\kLIN}{\ensuremath{k\text{-}\mathsf{Lin}}\xspace}
 \newcommand{\SEDL}{\hardprobfont{SEDL}\xspace}
 \newcommand{\DL}{\hardprobfont{DL}\xspace}
@@ -193,7 +213,10 @@
 \newcommand{\mynot}{\ensuremath{\mathsf{not}}\xspace}
 \newcommand{\Input}{\ensuremath{\mathsf{Input}}\xspace}
 \newcommand{\pp}{\ensuremath{\mathsf{pp}}\xspace}
-
+\newcommand{\ListRVK}{L_\mathsf{{RVK}}}
+\newcommand{\ListSK}{L_\mathsf{{SK}}}
+\newcommand{\ListCorr}{L_\mathsf{{Corr}}}
+\newcommand{\ListSIG}{L_\mathsf{{SIG}}}
 
 %--------------------------------------------------------
 % Double angle brackets

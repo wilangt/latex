@@ -8,8 +8,8 @@
 % \usepackage{biblatex} % Better bibliographic facilities
 \usepackage{url} % To include (hardcoded) links
 % \usepackage{paralist} % Enumerate and itemize within paragraphs
-\usepackage{etoolbox} % To make toggles 
-\usepackage{ifthen} % To make toggles 
+\usepackage{etoolbox} % To make toggles
+\usepackage{ifthen} % To make toggles
 \usepackage[textsize=small]{todonotes} % To write todo notes
 \usepackage[justification=centering]{caption} % to center long captions
 
@@ -19,11 +19,13 @@
 % Editorial
 %--------------------------------------------------------
 
-\newcommand{\redunderline}[1]{\textcolor{red}{\underline{\textcolor{black}{#1}}}} 
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{\textcolor{black}{#1}}}}
 \newcommand{\TBW}{\textcolor{blue}{\textbf{To Be Written...}}}
 \newcommand{\Note}[1]{\textcolor{magenta}{ $\langle \! \langle$ #1 $\rangle \! \rangle$}}
 \newcommand{\todonote}[1]{\todo[inline]{Milan: #1}}
 \newcommand{\TODO}[1]{\todo[inline]{Milan: #1}}
+\newcommand{\todokeitaro}[1]{\todo[inline]{Keitaro: #1}}
+\newcommand{\TODOKEI}[1]{\todo[inline]{Keitaro: #1}}
 \newtoggle{notes}
 \toggletrue{notes} % set to false to remove colored notes from the paper
 
