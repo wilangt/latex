@@ -11,6 +11,13 @@ all: $(JOB).pdf
 $(JOB).pdf: $(DOC).tex  **/*.tex submodule_latex $(CRYPTOBIB)
 	$(TEX) $<
 
+# beamer: beamer.tex **/*.tex submodule_latex $(CRYPTOBIB)
+#		latexmk -pdf -jobname=beamer -pdflatex="pdflatex $(FLAGS)" -use-make beamer.tex
+#
+#	beamer.tex:
+#		cp latex/main-files/beamer.tex .
+#		cp -r latex/root/slides .
+
 pdflatex:  # if latexmk doesn't work
 	pdflatex -jobname=$(JOB) $(FLAGS) $(DOC).tex
 	pdflatex -jobname=$(JOB) $(FLAGS) $(DOC).tex
