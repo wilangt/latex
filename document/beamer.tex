@@ -1,5 +1,18 @@
 \documentclass{beamer}
 
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+% To put notes in the slides (use with pympress)
+\usepackage[draft]{pdfcomment} 
+\newcommand{\annot}[1]{\marginnote{\pdfcomment[icon=note]{#1}}}
+\usepackage{environ}
+\NewEnviron{speakernote}{
+	\annot{\BODY}
+}
+\newcommand\ret\textCR
+
+
 \definecolor{rougeb}{rgb}{0.75,0.01,0}
 
 %\setbeamercolor{subsection in toc}{fg=red} %change la couleur de la ToC
@@ -14,6 +27,16 @@
     \begin{frame}
         \frametitle{Summary}
         \tableofcontents[currentsection]
+    \end{frame}
+}
+\fi
+
+\ifnum\tocsection=2
+\AtBeginSubsection[]
+{
+    \begin{frame}
+        \frametitle{Summary}
+        \tableofcontents[currentsubsection]
     \end{frame}
 }
 \fi
@@ -110,6 +133,3 @@
   \insertframenumber\,/\,\inserttotalframenumber}
 
 }
-
-\usepackage{graphicx} % Allows including images
-\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
