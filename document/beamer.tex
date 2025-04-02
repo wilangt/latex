@@ -4,8 +4,13 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 
 % To put notes in the slides (use with pympress)
+
+\ifnum\speakernotes=1
 \usepackage[draft]{pdfcomment} 
 \newcommand{\annot}[1]{\marginnote{\pdfcomment[icon=note]{#1}}}
+\else
+\newcommand{\annot}[1]{}
+\fi
 \usepackage{environ}
 \NewEnviron{speakernote}{
 	\annot{\BODY}
