@@ -1,8 +1,0 @@
-\procedureblock[linenumbering]{$\KeyGen(P)$}{
-	(p, G_1, g_1, G_2, g_2, G_T, e) \gets P\\
-	a_0, a_1 \getsr \Z_p \, ; \, A_0, A_1 \gets g^{a_0}, g^{a_0}\\
-	R \gets G_1\\
-	(\crs, \td) \gets \GS.\CRS(P)\\
-	\sk, \pk \gets (a_0, a_1, R, \crs),\, (A_0, A_1, R, \crs) \\
-	\pcreturn \sk, \pk
-}
