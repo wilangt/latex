@@ -9,13 +9,13 @@ base:
 
 paper: base 
 	cp -n main-files/paper.tex ../main.tex 
-	rm -rf .
+	(cd ../ && rm -rf latex)
 
 document: base 
 	cp -n main-files/document.tex ../main.tex && rm -rf main-files
 	tail -n +2 ../Makefile > ../Makefile.tmp 
-	rm -rf .
+	(cd ../ && rm -rf latex)
 
 beamer: base 
 	cp -n main-files/beamer.tex ../main.tex 
-	rm -rf .
+	(cd ../ && rm -rf latex)
